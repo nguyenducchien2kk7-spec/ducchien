@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phòng Gym Nguyễn Đức Chiển</title>
+  <style>
+    /* ====== MÀU CHỦ ĐẠO & FONT ====== */
+    :root {
+      --main: #ff4b2b;
+      --main2: #ff416c;
+      --dark: #0b0c10;
+      --light: #f4f4f4;
+      --text: #333;
+      font-family: "Poppins", sans-serif;
+    }
+    * {box-sizing: border-box;}
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ====== THANH MENU ====== */
+    header {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      animation: slideDown 1s ease;
+    }
+    @keyframes slideDown {
+      from {transform: translateY(-100%); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+    .logo {
+      font-size: 26px;
+      font-weight: 700;
+      background: linear-gradient(to right, var(--main2), var(--main));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--main);
+    }
+
+    .cta {
+      background: linear-gradient(to right, var(--main2), var(--main));
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(255,65,108,0.4);
+    }
+
+    /* ====== HERO ====== */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      color: white;
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    .hero-content {
+      max-width: 600px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    .hero button {
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: white;
+      color: var(--main);
+      font-weight: 600;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .hero button:hover {
+      background: var(--light);
+      transform: translateY(-3px);
+    }
+
+    /* ====== CÁC PHẦN GIỚI THIỆU ====== */
+    section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    h2 {
+      color: var(--main);
+      font-size: 2rem;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--main);
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 25px;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 25px rgba(255,75,43,0.3);
+    }
+
+    /* ====== ẢNH HUẤN LUYỆN VIÊN ====== */
+    .trainer img {
+      width: 100%;
+      border-radius: 12px;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .trainer img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      background: #111;
+      color: #bbb;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    footer p {
+      margin: 5px 0;
+    }
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav">
+      <div class="logo">FitZone</div>
+      <nav>
+        <a href="#about">Giới thiệu</a>
+        <a href="#services">Dịch vụ</a>
+        <a href="#trainers">Huấn luyện viên</a>
+        <a href="#contact">Liên hệ</a>
+      </nav>
+      <a href="#contact" class="cta">Tham gia ngay</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Phòng Gym Đức Chiển</h1>
+      <p>Nâng cao sức khỏe, thay đổi vóc dáng và tràn đầy năng lượng mỗi ngày với đội ngũ huấn luyện viên chuyên nghiệp.</p>
+      <button onclick="alert('Đăng ký thành công! Hẹn gặp bạn tại Đức Chiển chanel!')">Đăng ký tập thử</button>
+    </div>
+  </section>
+
+  <!-- GIỚI THIỆU -->
+  <section id="about">
+    <h2>Phòng Gym Đức Chiển</h2>
+    <p>Phòng gym mang đến không gian tập luyện hiện đại, thoáng mát và chuyên nghiệp. Trang thiết bị nhập khẩu, PT tận tâm, lớp nhóm đa dạng giúp bạn đạt được mục tiêu nhanh hơn.</p>
+  </section>
+
+  <!-- DỊCH VỤ -->
+  <section id="services">
+    <h2>Dịch vụ nổi bật</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Huấn luyện cá nhân</h3>
+        <p>Lộ trình 1-1 cùng huấn luyện viên chuyên nghiệp, đạt mục tiêu hiệu quả.</p>
+      </div>
+      <div class="card">
+        <h3>Lớp nhóm sôi động</h3>
+        <p>Yoga, Zumba, HIIT – luyện tập cùng bạn bè để có động lực mỗi ngày.</p>
+      </div>
+      <div class="card">
+        <h3>Chăm sóc & Phục hồi</h3>
+        <p>Xông hơi, massage, hỗ trợ phục hồi thể lực sau tập luyện.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HUẤN LUYỆN VIÊN -->
+  <section id="trainers">
+    <h2>Huấn luyện viên của chúng tôi</h2>
+    <div class="cards">
+      <div class="card trainer">
+        <img src="images.jpg" alt="PT Nam">
+        <h3>Trần Bình</h3>
+        <p>Chuyên gia tăng cơ & dinh dưỡng</p>
+      </div>
+      <div class="card trainer">
+        <img src="bj7m.jpg" alt="PT Nữ">
+        <h3>Mai LK</h3>
+        <p>Huấn luyện viên HIIT & Giảm mỡ</p>
+      </div>
+      <div class="card trainer">
+        <img src="images (1).jpg" alt="Yoga Coach">
+        <h3>Shizuka</h3>
+        <p>Chuyên gia Yoga & Phục hồi</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIÊN HỆ -->
+  <section id="contact">
+    <h2>Liên hệ với chúng tôi</h2>
+    <p>📍 123 Đường Sức Khỏe, Quận A, TP.HCM <br> 📞 0123 456 789 <br> ✉️ info@Ducchien.vn</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Ducchien. All rights reserved.</p>
+    <p>Theo dõi chúng tôi trên mạng xã hội để nhận ưu đãi mới nhất!</p>
+  </footer>
+
+</body>
+</html>
